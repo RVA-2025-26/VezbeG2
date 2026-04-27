@@ -2,6 +2,7 @@ package rva.models;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,12 +22,15 @@ public class Dobavljac {
 	private String adresa;
 	private String kontakt;
 	
-	@OneToMany(mappedBy = "dobavljac")
+	@OneToMany(mappedBy = "dobavljac", cascade = CascadeType.ALL)
 	private List<Porudzbina> porudzbine;
+	
+	public Dobavljac() {
+		
+	}
 
-	public Dobavljac(long id, String naziv, String adresa, String kontakt) {
+	public Dobavljac(String naziv, String adresa, String kontakt) {
 		super();
-		this.id = id;
 		this.naziv = naziv;
 		this.adresa = adresa;
 		this.kontakt = kontakt;
