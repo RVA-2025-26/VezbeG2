@@ -1,7 +1,17 @@
-h1{
-    color:red
+mat-sidenav{
+    background-color: rgba(241, 241, 241, 0.682);
 }
 
-h2{
-    color:purple;
+mat-expansion-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+mat-expansion-panel-header{
+    height: 100%;
+}
+
+a[mat-raised-button]{
+    color: white;
 }
